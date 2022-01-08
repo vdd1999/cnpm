@@ -87,16 +87,6 @@ if (isset($checkStaff)) {
                                                                 <?php }
                                                                 } ?>
                                                             </tbody>
-                                                            <thead>
-                                                                <tr>
-                                                                    <th scope="row " style="width: 5%; ">#</th>
-                                                                    <th scope="row " style="width: 10%; ">Họ và Tên</th>
-                                                                    <th scope="row " style="width: 25%; ">Tên người dùng</th>
-                                                                    <th scope="row " style="width: 15%; ">Email</th>
-                                                                    <th scope="row " style="width: 25%; ">CMND</th>
-                                                                    <th class="text-center" scope="row " style="width: 5%; ">Thao tác</th>
-                                                                </tr>
-                                                            </thead>
                                                         </table>
                                                     </div>
                                                 </div>
@@ -113,7 +103,7 @@ if (isset($checkStaff)) {
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="addmemberLabel">Thêm Nhân Viên</h5>
+                                        <h5 class="modal-title" id="addmemberLabel">Thêm Nhân Sự</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">×</span>
                                         </button>
@@ -121,21 +111,28 @@ if (isset($checkStaff)) {
                                     <div class="modal-body">
                                         <form class="needs-validation" action="./?q=staff" method="POST" novalidate>
                                             <div class="row">
-                                                <div class="col-lg-4 mt-3">
+                                                <div class="col-lg-6 mt-6">
                                                     <label for="fullname">Họ và Tên:</label>
                                                     <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Nguyễn Văn A" required>
                                                 </div>
-                                                <div class="col-lg-4 mt-3">
+                                                <div class="col-lg-6 mt-6">
                                                     <label for="user">Tên người dùng:</label>
                                                     <input type="text" class="form-control" name="user" id="user" placeholder="nguyenvana" required>
                                                 </div>
-                                                <div class="col-lg-4 mt-3">
+                                            </div>
+                                            <div class="row" style="margin-top: 2%">
+                                                <div class="col-lg-6 mt-6">
+                                                    <label for="id_card">Email:</label>
+                                                    <input type="text" class="form-control" name="email" id="email" placeholder="nguyendangkhoa@gmail.com" required>
+                                                </div>
+                                                <div class="col-lg-6 mt-6">
                                                     <label for="id_card">CMND/CCCD:</label>
                                                     <input type="text" class="form-control" name="id_card" id="id_card" placeholder="352512xxx" required>
                                                 </div>
-                                                <div class="modal-footer mt-3">
-                                                    <button name="member" type="submit " class="btn btn-primary">Thêm nhân viên</button>
-                                                </div>
+                                            </div>
+                                            <div class="modal-footer mt-3">
+                                                <button name="member" type="submit " class="btn btn-primary">Thêm nhân sự</button>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>

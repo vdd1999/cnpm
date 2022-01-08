@@ -1270,5 +1270,14 @@ new-task label input[type=checkbox] {
 .price-6 img {
     width: 70px;
 }
-
+.btn:after{
+    opacity: 0;
+    transition: all 2s
+}
+.btn:active:after{
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
 /* ==================  priceing end  ======================================= */
