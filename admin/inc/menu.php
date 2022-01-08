@@ -99,7 +99,7 @@ $carcompany = new carcompany();
 
                     <?php if (Session::get('level') < 2) { ?>
                         <li class="nav-item">
-                            <a href="?q=member" class="nav-link"><span class="pcoded-micon"><i class="feather icon-layers"></i></span><span class="pcoded-mtext">Quản lý thống kê</span></a>
+                            <a href="?q=member" class="nav-link"><span class="pcoded-micon"><i class="feather icon-layers"></i></span><span class="pcoded-mtext">Quản lý đăng kí</span></a>
                         </li>
                     <?php } ?>
 
