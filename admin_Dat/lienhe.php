@@ -1,5 +1,5 @@
 <?php
-  require_once('../conn.php');
+  require_once('../config/conn.php');
   $getKhLienhe = getKhLienhe();
   if ($getKhLienhe['code'] == 0) {
     $kh = $getKhLienhe['result'];

@@ -26,7 +26,7 @@ if (isset($checkCarCompany)) {
                                 <div class="row align-items-center">
                                     <div class="col-md-12">
                                         <div class="page-header-title">
-                                            <h5 class="m-b-10">Quản Lý Sản Phẩm</h5>
+                                            <h5 class="m-b-10">Quản Lý Hãng Xe</h5>
                                         </div>
                                         <ul class="breadcrumb">
                                             <li class="breadcrumb-item"><a href=""><i class="feather icon-home"></i></a></li>
@@ -82,14 +82,6 @@ if (isset($checkCarCompany)) {
                                                                 <?php }
                                                                 } ?>
                                                             </tbody>
-                                                            <thead>
-                                                                <tr>
-                                                                    <th scope="row " style="width: 5%; ">#</th>
-                                                                    <th scope="row " style="width: 25%; ">Hãng xe</th>
-                                                                    <th scope="row " style="width: 40%; ">Mỗ tả</th>
-                                                                    <th class="text-center" scope="row " style="width: 5%; ">Thao tác</th>
-                                                                </tr>
-                                                            </thead>
                                                         </table>
                                                     </div>
                                                 </div>
@@ -121,7 +113,9 @@ if (isset($checkCarCompany)) {
                                                 <label for="descriptions">Mô tả:</label>
                                                 <textarea class="form-control" name="descriptions" id="descriptions" rows="6"></textarea>
                                             </div>
-                                            <button type="submit" class="btn btn-primary">Thêm hãng xe</button>
+                                            <div class="modal-footer mt-3">
+                                                <button type="submit" class="btn btn-primary">Thêm hãng xe</button>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>

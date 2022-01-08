@@ -1,8 +1,8 @@
 <?php
 	define('servername','localhost');
 	define('username','root');
-	define('password','root');
-	define('db','vua4banh');
+	define('password','');
+	define('db','cnpm');
 	// Import PHPMailer classes into the global namespace
 	// These must be at the top of your script, not inside a function
 	use PHPMailer\PHPMailer\PHPMailer;
@@ -10,7 +10,7 @@
 	use PHPMailer\PHPMailer\Exception;
 
 	// Load Composer's autoloader
-	require 'vendor/autoload.php';
+	require '../vendor/autoload.php';
 	function open_db() {
 		$conn = new mysqli(servername, username, password, db);
 		

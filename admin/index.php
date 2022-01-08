@@ -42,6 +42,13 @@ if (isset($_GET["q"])) {
                 echo "<script>alert('Bạn không có quyền truy cập vào trang này!'); window.location='?q=homepage';</script>";
             }
             break;
+        case 'driver':
+            if (Session::get('level') < 2) {
+                include_once('pages/driver.php');
+            } else {
+                echo "<script>alert('Bạn không có quyền truy cập vào trang này!'); window.location='?q=homepage';</script>";
+            }
+            break;
     }
 } else {
     include_once 'pages/homepage.php';
