@@ -182,4 +182,18 @@
 		return array('code'=>1,'msg'=>"Khong co thong tin");
 	}
 
+	function updateStatus($id) {
+		$con = open_db();
+		$sql = "UPDATE dangkilaithu SET trangthai=1 WHERE id=$id";
+		$stm = $conn->prepare($sql);
+		if (!$stm->execute()) {
+			return array('code'=>2,'msg'=>"SEVER CANNOT COMMAND");
+		}
+		$result = $stm->get_result();
+		if ($result->num_rows > 0) {
+			return array('code'=>0,'result'=> $result);
+		}
+		return array('code'=>1,'msg'=>"Khong co thong tin");
+	}
+
 ?>

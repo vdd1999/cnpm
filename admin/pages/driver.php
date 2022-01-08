@@ -1,3 +1,10 @@
+<?php
+    require_once('../config/conn.php');
+    $getDangKiLaiThu = getDangKiLaiThu();
+    if ($getDangKiLaiThu['code'] == 0) {
+      $kh = $getDangKiLaiThu['result'];
+    }
+?>
 <section class="pcoded-main-container">
     <div class="pcoded-wrapper">
         <div class="pcoded-content">
@@ -48,19 +55,26 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
+                                                                <?php
+                                                                    $stt = 0;
+                                                                    while ($row = $kh->fetch_assoc()) {
+                                                                ?>
                                                                 <tr>
-                                                                    <td>1</td>
-                                                                    <td>Nguyễn Đăng Khoa</td>
-                                                                    <td>dangkhoa911@gmail.com</td>
-                                                                    <td>123465789</td>
-                                                                    <td>9</td>
-                                                                    <td>2021-04-23 21:16:04</td>
-                                                                    <td>Còn hàng</td>
+                                                                    <td><?= $stt +=1 ?></td>
+                                                                    <td> <?= $row['hoten'] ?></td>
+                                                                    <td> <?= $row['sdt'] ?></td>
+                                                                    <td> <?= $row['email'] ?></td>
+                                                                    <td> <?= $row['maxe'] ?></td>
+                                                                    <td><?= date('d M,Y',strtotime($row['ngaydangki'])) ?></td>
+                                                                    <td><button class="btn btn-danger"><?= ($row['trangthai'] == 0) ? "WAITING" : "DONE"?></button></td>
                                                                     <td class="text-center">
-                                                                        <a class="btn btn-primary" style="margin: 0; padding: 2px 8px;" href="?q=updatestaff&id=<?php echo $value['id'] ?>"><i class="fas fa-check-circle" style="margin-right: 0;"></i></a>
-                                                                        <!-- <a class="btn btn-danger" style="margin: 0; padding: 2px 10px;" onclick="return confirm('Hãy cân nhắc kỹ trước khi xóa?');" href="?q=staff&id=<?php echo $value['id'] ?>" type="submit"><i class="fa fa-trash " style="margin-right: 0;"></i></a> -->
+                                                                        <a class="btn btn-primary" style="margin: 0; padding: 2px 8px;" href=""><i class="fas fa-check-circle" style="margin-right: 0;"></i></a>
+                                                                        <a class="btn btn-danger" style="margin: 0; padding: 2px 10px;" onclick="return confirm('Hãy cân nhắc kỹ trước khi xóa?');" href="" type="submit"><i class="fa fa-trash " style="margin-right: 0;"></i></a>
                                                                     </td>
-                                                                </tr>
+                                                                </tr> 
+                                                                <?php
+                                                                }
+                                                                ?> 
                                                             </tbody>
                                                         </table>
                                                     </div>

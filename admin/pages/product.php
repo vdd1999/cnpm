@@ -1,3 +1,10 @@
+<?php
+    require_once('../config/conn.php');
+    $getSanPham = getSanpham();
+    if ($getSanPham['code'] == 0) {
+      $kh = $getSanPham['result'];
+    }
+?>
 <section class="pcoded-main-container">
     <div class="pcoded-wrapper">
         <div class="pcoded-content">
@@ -20,7 +27,7 @@
                             </div>
                         </div>
 
-                        <!-- HIEN THI DANH SACH THANH VIEN -->
+                        <!-- HIEN THI DANH SACH SAN PHAM -->
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="card">
@@ -41,16 +48,31 @@
                                                             <thead>
                                                                 <tr>
                                                                     <th scope="row " style="width: 5%; ">#</th>
-                                                                    <th scope="row " style="width: 10%; ">Tên xe</th>
-                                                                    <th scope="row " style="width: 25%; ">Hãng xe</th>
+                                                                    <th scope="row " style="width: 25%; ">Tên xe</th>
+                                                                    <th scope="row " style="width: 10%; ">Hãng xe</th>
                                                                     <th scope="row " style="width: 15%; ">Giá</th>
-                                                                    <th scope="row " style="width: 25%; ">Tình trạng</th>
-                                                                    <th scope="row " style="width: 25%; ">Trạng thái</th>
+                                                                    <th scope="row " style="width: 15%; ">Ảnh</th>
+                                                                    <th scope="row " style="width: 25%; ">Mô tả</th>
+                                                                    <th scope="row " style="width: 15%; ">Nội thất</th>
+                                                                    <th scope="row " style="width: 10%; ">Ngoại thất</th>
+                                                                    <th scope="row " style="width: 15%; ">Chiều dài cơ số</th>
+                                                                    <th scope="row " style="width: 15%; ">Trọng lượng bản thân</th>
+                                                                    <th scope="row " style="width: 15%; ">Câu trước</th>
+                                                                    <th scope="row " style="width: 25%; ">Câu sau</th>
+                                                                    <th scope="row " style="width: 10%; ">Tải trọng cho phép</th>
+                                                                    <th scope="row " style="width: 15%; ">Trọng lượng toàn bộ</th>
+                                                                    <th scope="row " style="width: 15%; ">Vet bánh trước sau</th>
+                                                                    <th scope="row " style="width: 25%; ">Kích thước xe</th>
+                                                                    <th scope="row " style="width: 15%; ">Kích thước </th>
+                                                                    <th scope="row " style="width: 10%; ">Ngoại thất</th>
+                                                                    <th scope="row " style="width: 15%; ">Chiều dài cơ số</th>
+                                                                    <th scope="row " style="width: 15%; ">Trọng lượng bản thân</th>
+                                                                    <th scope="row " style="width: 15%; ">Câu trước</th>
                                                                     <th class="text-center" scope="row " style="width: 5%; ">Thao tác</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                                <tr>
+                                                                <!-- <tr>
                                                                     <td>1</td>
                                                                     <td>Honda Wave i125</td>
                                                                     <td>Honda</td>
@@ -61,7 +83,26 @@
                                                                         <a class="btn btn-primary" style="margin: 0; padding: 2px 8px;" href="?q=updatestaff&id=<?php echo $value['id'] ?>"><i class="fa fa-edit" style="margin-right: 0;"></i></a>
                                                                         <a class="btn btn-danger" style="margin: 0; padding: 2px 10px;" onclick="return confirm('Hãy cân nhắc kỹ trước khi xóa?');" href="?q=staff&id=<?php echo $value['id'] ?>" type="submit"><i class="fa fa-trash " style="margin-right: 0;"></i></a>
                                                                     </td>
-                                                                </tr>
+                                                                </tr> -->
+                                                                <?php
+                                                                    $stt = 0;
+                                                                    while ($row = $kh->fetch_assoc()) {
+                                                                ?>
+                                                                <tr>
+                                                                    <td><?= $stt +=1 ?></td>
+                                                                    <td> <?= $row['tensp'] ?></td>
+                                                                    <td> <?= $row['hangxe'] ?></td>
+                                                                    <td> <?= $row['price'] ?></td>
+
+                                                                    <td class="text-center">
+                                                                        <a class="btn btn-primary" style="margin: 0; padding: 2px 8px;" href=""><i class="fas fa-check-circle" style="margin-right: 0;"></i></a>
+                                                                        <a class="btn btn-danger" style="margin: 0; padding: 2px 10px;" onclick="return confirm('Hãy cân nhắc kỹ trước khi xóa?');" href="" type="submit"><i class="fa fa-trash " style="margin-right: 0;"></i></a>
+                                                                    </td>
+                                                                </tr> 
+                                                                <?php
+                                                                }
+                                                                ?>
+                                                                
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -72,7 +113,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- KET THUC HIEN THI DANH SACH THANH VIEN -->
+                        <!-- KET THUC HIEN THI DANH SACH SAN PHAM -->
 
                         <!-- [Modal] -->
                         <div class="modal fade" id="addmember" tabindex="-1" role="dialog" aria-labelledby="addmemberLabel" style="display: none;" aria-hidden="true">
