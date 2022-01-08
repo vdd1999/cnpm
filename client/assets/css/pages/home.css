@@ -1,0 +1,144 @@
+.home-content .video-wrapper {
+  padding: 85px 0;
+  position: relative;
+}
+
+.home-content #carousel-product .carousel-indicators {
+  bottom: -90px;
+}
+
+.home-content #carousel-customer .carousel-indicators {
+  bottom: -40px;
+}
+
+.home-content .carousel .carousel-indicators li {
+  background-color: #d5dada;
+  width: 30px;
+  height: 4px;
+  cursor: pointer;
+}
+
+.home-content .carousel .carousel-indicators li.active {
+  background-color: #1464f4;
+}
+
+.home-content #carousel-customer {
+  font-size: 20px;
+}
+
+.home-content .video-wrapper img:first-child {
+  width: 100%;
+  position: absolute;
+  top: 85px;
+  left: 0;
+}
+
+.home-content .video-wrapper img:last-child {
+  width: 100%;
+  position: absolute;
+  bottom: 88px;
+  left: 0;
+}
+
+.home-content video {
+  width: 100%;
+}
+
+.home-content .carousel .carousel-caption {
+  bottom: 40px;
+}
+
+.home-content .product,
+.home-content .customer {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.home-content .product .title,
+.home-content .customer .title {
+  font-size: 20px;
+}
+
+.home-content .product .title h2,
+.home-content .customer .title h2 {
+  font-size: 52px;
+  margin-bottom: 24px;
+}
+
+.home-content .product .product-list {
+  margin-top: 64px;
+}
+
+.home-content .customer .customer-list {
+  margin-top: 40px;
+}
+
+.home-content .product .product-list .item,
+.home-content .customer .customer-list .item {
+  text-align: left;
+  margin-left: 20px;
+}
+
+.home-content .product .product-list .item img,
+.home-content .customer .customer-list .item img {
+  width: 363px;
+  height: 191px;
+}
+
+.home-content .product .product-list .item .slogan,
+.home-content .customer .customer-list .item .slogan {
+  margin: 36px 0 8px;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.home-content .product .product-list .item .title,
+.home-content .customer .customer-list .item .title {
+  font-size: 52px;
+  margin-bottom: 40px;
+}
+
+.home-content .product .product-list .item div .type div:nth-child(1),
+.home-content .product .product-list .item div .price div:nth-child(1),
+.home-content .customer .customer-list .item div .type div:nth-child(1),
+.home-content .customer .customer-list .item div .price div:nth-child(1) {
+  font-size: 12px;
+}
+
+.home-content .product .product-list .item div .type div:nth-child(2),
+.home-content .product .product-list .item div .price div:nth-child(2),
+.home-content .customer .customer-list .item div .type div:nth-child(2),
+.home-content .customer .customer-list .item div .price div:nth-child(2) {
+  font-size: 20px;
+}
+
+.home-content .product .product-list .item a.btn.btn-detail {
+  background-color: transparent;
+  border: 1px solid #1464f4;
+  border-radius: 0;
+  width: 100%;
+  color: #1464f4;
+  font-weight: bolder;
+  font-size: 12px;
+  padding: 12px 0;
+  margin-top: 40px;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.home-content .product .product-list .item a.btn.btn-detail:hover {
+  color: #fff;
+  background-color: #1464f4;
+  border: 1px solid #fff;
+  border: 1px solid #fff;
+  border: none;
+  opacity: 1;
+}
+
+.home-content #carousel-customer .container {
+  height: 180px;
+}
+
+.home-content .customer .author {
+  margin-top: 15px;
+}
