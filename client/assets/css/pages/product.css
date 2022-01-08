@@ -1,0 +1,285 @@
+.product-container .slide-intro {
+  padding: 85px 0;
+}
+
+.product-container .slide-intro img {
+  height: 600px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.product-container .slide-intro .carousel-control-prev-icon,
+.product-container .product-hot .carousel-control-prev-icon {
+  background-image: url("../../images/arrow.png");
+  width: 30px;
+  height: 30px;
+}
+
+.product-container .slide-intro .carousel-control-next-icon,
+.product-container .product-hot .carousel-control-next-icon {
+  background-image: url("../../images/arrow.png");
+  width: 30px;
+  height: 30px;
+  transform: rotate(180deg);
+}
+
+.product-container .slide-intro .carousel-indicators li {
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  background-color: #fdffff;
+  margin-left: 8px;
+}
+
+.product-container .slide-intro .carousel-indicators li.active {
+  background-color: #1464f4;
+}
+
+.product-container .policy.container {
+  max-width: 1140px;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.product-container .policy.container .row .col-lg-4:not(:last-of-type) {
+  border-right: 1px solid #e4e4e4;
+}
+
+.product-container .text--highlight {
+  color: #2c72c6;
+}
+
+.product-container .product-new,
+.product-container .product-hot,
+.product-container .policy-info,
+.product-container .tutorial {
+  margin-top: 70px;
+}
+
+.product-container .product-new .title,
+.product-container .product-hot .title,
+.product-container .policy-info,
+.product-container .tutorial .title,
+.product-container .service .title {
+  text-align: center;
+  letter-spacing: 5px;
+  margin-bottom: 20px;
+  font-size: 40px;
+}
+
+.product-container .policy-info .title {
+  font-size: 35px;
+  font-weight: 100;
+}
+
+.product-container .service .title {
+  margin-bottom: 25px;
+}
+
+.product-container .policy-info .summary {
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: normal;
+}
+
+.product-container .policy-info img {
+  width: 776px;
+  height: 432px;
+  margin-top: 15px;
+}
+
+.product-container .product-new img {
+  width: 540px;
+  height: 353px;
+}
+
+.product-container .product-new .information,
+.product-container .product-new .sales {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-container .product-new .sales {
+  margin-top: 20px;
+}
+
+.product-container .product-new .sales .title {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: normal;
+}
+
+.product-container .product-new .information .title {
+  font-weight: 700;
+  letter-spacing: normal;
+  text-align: left;
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.product-container .product-new .information .price {
+  color: #2c72c6;
+  font-weight: 700;
+  letter-spacing: normal;
+}
+
+.product-container .text--small {
+  font-size: 13px;
+  font-weight: 700;
+  color: #979797;
+}
+
+.product-container .product-new .item,
+.product-container .product-hot .item {
+  text-align: center;
+}
+
+.product-container a.btn.btn-detail {
+  background-color: transparent;
+  border: 1px solid #1464f4;
+  border-radius: 0;
+  width: 60%;
+  color: #1464f4;
+  font-weight: bolder;
+  font-size: 12px;
+  padding: 8px 0;
+  margin-top: 40px;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.product-container a.btn.btn-detail:hover {
+  color: #fff;
+  background-color: #1464f4;
+  border: 1px solid #fff;
+  border: 1px solid #fff;
+  border: none;
+  opacity: 1;
+}
+
+.product-container .product-hot #carousel-product img {
+  width: 336px;
+  height: 342px;
+  object-fit: contain;
+}
+
+.product-container .product-hot #carousel-product .item .title {
+  text-align: left;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: normal;
+  padding: 15px 15px;
+  margin: 0;
+}
+
+.product-container .product-hot #carousel-product .item .price,
+.product-container .product-hot #carousel-product .item .sales {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.9;
+}
+
+.product-container .four-easy {
+  background-image: url(https://shop.vinfastauto.com/on/demandware.static/Sites-app_vinfast_vn-Site/-/vi_VN/v1641640113682/images/four-easy.png);
+  text-align: center;
+  height: 474px;
+}
+
+.product-container .four-easy .title {
+  padding: 70px 12px 40px 12px;
+  color: #fff;
+  letter-spacing: 5px;
+  font-size: 35px;
+}
+
+.product-container .four-easy .images {
+  background-color: #fff;
+  height: 250px;
+}
+
+.product-container .four-easy .images .item {
+  padding: 40px 8px;
+  height: 250px;
+}
+
+.product-container .four-easy .images .item-icon {
+  position: relative;
+}
+
+.product-container .four-easy .images .item-icon .arrow {
+  position: absolute;
+  top: 40px;
+  right: 0;
+}
+
+.product-container .four-easy .images .item-text {
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.product-container .tutorial .sub-title {
+  text-align: center;
+  font-size: 16px;
+  width: 25%;
+  margin: 40px auto 35px auto;
+  padding: 8px 0;
+  color: #2c72c6;
+  border-bottom: 3px solid #2c72c6 !important;
+  font-weight: bolder;
+}
+
+.product-container .tutorial .images img {
+  width: 344px;
+  height: 250px;
+}
+
+.product-container .service label {
+  font-weight: bolder;
+  font-size: 13px;
+}
+
+.product-container .service .mark {
+  color: #fe0000;
+  background-color: transparent;
+}
+
+.product-container .service .group-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+
+.product-container .service .group-item input,
+.product-container .service .group-item select {
+  padding: 5px 12px;
+  width: 190px;
+  border: 1px solid #e4e4e4;
+  box-sizing: border-box;
+  border-radius: 3px;
+  height: 35px;
+  line-height: 35px;
+  text-overflow: ellipsis;
+}
+
+.product-container .service {
+  height: 450px;
+}
+
+.product-container .service .btn.btn-service {
+  width: 100%;
+  background-color: #2c72c6;
+  color: #fff;
+  padding: 8px 12px;
+  font-weight: 700;
+  font-size: 13px;
+  margin: 12px 0;
+}
+
+.product-container .service .btn.btn-service:hover {
+  width: 100%;
+  background-color: #548ed4;
+  color: #fff;
+}
