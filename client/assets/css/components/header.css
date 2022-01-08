@@ -1,0 +1,22 @@
+.header-container {
+  height: 85px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-container img {
+  padding: 20px 50px;
+}
+
+.header-container .nav-container {
+  padding: 20px 50px;
+}
+
+.header-container .nav-container .nav-link {
+  color: black;
+}
+
+.header-container .nav-container .nav-link:hover {
+  color: #0d6efd;
+}
