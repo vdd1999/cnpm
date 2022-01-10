@@ -3,8 +3,6 @@
         if (isset($_POST['them'])) {
             $id = $_POST['idDangki'];
             $result = updateStatus(intval($id));
-        } else {
-            echo "not oke";
         }
     }
 

@@ -222,4 +222,15 @@
 	// 	return array('code'=>1,'msg'=>"Khong co thong tin");
 	// }
 
+	function dangkilaithu($hoten,$sdt,$email,$id) {
+		$conn = open_db();
+		$sql = "INSERT INTO dangkilaithu(hoten,email,sdt,maxe) VALUES(?,?,?,?)";
+		$stm = $conn->prepare($sql);
+		$stm->bind_param('sssi',$hoten,$email,$sdt,$id);
+		if (!$stm->execute()) {
+			return array('code'=>'2',"msg"=>"SEVER CANNOT COMMAND","error"=>$stm->error);
+		}
+		$malienhe = $stm->insert_id;
+		return array('code'=>0,"msg"=>"ĐỂ LẠI THÔNG TIN THÀNH CÔNG, CHÚNG TÔI SẼ LIÊN HỆ BẠN SỚM NHẤT","id"=>$malienhe);
+	}
 ?>

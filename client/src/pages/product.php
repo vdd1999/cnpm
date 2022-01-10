@@ -1,9 +1,19 @@
 <?php
   
   require_once '../../../config/conn.php'; 
-  $getSanPham = getNewProduct();
+  $getSanPham = getSanpham();
+  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['dangkilaithu'])) {
+      $lastname = $_POST['last_name'];
+      $email = $_POST['email'];
+      $phone = $_POST['phone'];
+      $sample = $_POST['sample'];
+      dangkilaithu($lastname, $email, $phone, $sample);
+    }
+  }
   if ($getSanPham['code'] == 0) {
     $result = $getSanPham['result'];
+    $result2 = $getSanPham['result'];
   }
   
   
@@ -444,7 +454,7 @@
               alt="" width="100%">
           </div>
           <div class="col-md-4 col-12">
-            <form action="">
+            <form method="POST" action="product.php">
               <div class="group-item">
                 <label class="label">Họ tên <span class="mark">*</span></label>
                 <input placeholder="Họ tên" id="last_name" maxlength="80" name="last_name" size="20" type="text"
@@ -456,30 +466,25 @@
                   class="custom-required" value="">
               </div>
               <div class="group-item">
-                <label class="label">Tỉnh thành <span class="mark">*</span></label>
-                <select name="city" id="city">
-                  <option value="" selected disabled hidden>Lựa chọn tỉnh Thành</option>
-                  <option data-id="ha-noi" value="Hà Nội" data-select2-id="19">Hà Nội</option>
-                  <option data-id="ho-chi-minh" value="Hồ Chí Minh" data-select2-id="20">Hồ Chí Minh</option>
-                </select>
-              </div>
-              <div class="group-item">
-                <label class="label">Tỉnh thành <span class="mark">*</span></label>
-                <select name="showroom" id="showroom">
-                  <option value="" selected disabled hidden>Lựa chọn Showroom</option>
-                  <option data-id="ha-noi" value="Hà Nội" data-select2-id="19">Hà Nội</option>
-                  <option data-id="ho-chi-minh" value="Hồ Chí Minh" data-select2-id="20">Hồ Chí Minh</option>
-                </select>
+                <label class="label">Email <span class="mark">*</span></label>
+                <input placeholder="Nhập email" id="email" maxlength="10" name="email" size="20" type="text"
+                  class="custom-required" value="">
               </div>
               <div class="group-item">
                 <label class="label">Mẫu xe <span class="mark">*</span></label>
                 <select name="sample" id="sample">
                   <option value="" selected disabled hidden>Lựa chọn</option>
-                  <option data-id="ha-noi" value="Hà Nội" data-select2-id="19">Hà Nội</option>
-                  <option data-id="ho-chi-minh" value="Hồ Chí Minh" data-select2-id="20">Hồ Chí Minh</option>
+                  <?php
+                  foreach ($result2 as $sp) {
+                  echo $value['id'];
+                  ?>
+                  <option value="<?= $sp['id'] ?>"><?= $sp['tensp'] ?></option>
+                  <?php
+                    }
+                  ?>
                 </select>
               </div>
-              <button class="btn btn-service">
+              <button type="submit" name="dangkilaithu" class="btn btn-service">
                 ĐĂNG KÝ LÁI THỬ
               </button>
             </form>
