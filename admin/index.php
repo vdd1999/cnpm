@@ -14,6 +14,34 @@ if (isset($_GET["q"])) {
                 echo "<script>alert('Bạn không có quyền truy cập vào trang này!'); window.location='?q=homepage';</script>";
             }
             break;
+        case 'contract':
+            if (Session::get('level') == "0") {
+                include_once 'pages/contract.php';
+            } else {
+                echo "<script>alert('Bạn không có quyền truy cập vào trang này!'); window.location='?q=homepage';</script>";
+            }
+            break;
+         case 'updateContract':
+                if (Session::get('level') == "0") {
+                    include_once 'pages/updateContract.php';
+                } else {
+                    echo "<script>alert('Bạn không có quyền truy cập vào trang này!'); window.location='?q=homepage';</script>";
+                }
+                break;
+        case 'updatecustomer':
+            if (Session::get('level') == "0") {
+                include_once 'pages/updatecustomer.php';
+            } else {
+                echo "<script>alert('Bạn không có quyền truy cập vào trang này!'); window.location='?q=homepage';</script>";
+            }
+            break;
+        case 'customer':
+            if (Session::get('level') == "0") {
+                include_once 'pages/customer.php';
+            } else {
+                echo "<script>alert('Bạn không có quyền truy cập vào trang này!'); window.location='?q=homepage';</script>";
+            }
+            break;
         case 'updatestaff':
             if (Session::get('level') == "0") {
                 include_once 'pages/updatestaff.php';

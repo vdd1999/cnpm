@@ -2,6 +2,7 @@
   
   require_once '../../../config/conn.php'; 
   $getSanPham = getSanpham();
+  $getNewProduct = getNewProduct();
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['dangkilaithu'])) {
       $lastname = $_POST['last_name'];
@@ -12,10 +13,12 @@
     }
   }
   if ($getSanPham['code'] == 0) {
-    $result = $getSanPham['result'];
+   
     $result2 = $getSanPham['result'];
   }
-  
+  if ($getNewProduct['code'] == 0) {
+    $result = $getNewProduct['result'];
+  }
   
 ?>
 <!DOCTYPE html>
@@ -140,16 +143,14 @@
           ?>
           <div class="col-lg-6">
             <div class="item">
-              <img
-                src="https://shop.vinfastauto.com/on/demandware.static/-/Sites-app_vinfast_vn-Library/default/dwffab4abd/landingpage/images/bike-tempest.jpg"
-                alt="">
+                <?php echo "<img src='../../../uploads/".$value['img']."' >"; ?>
               <div class="information">
                 <div>
                   <h4 class="title"><?= $value["tensp"]?></h4>
                   <p>Giá đã bao gồm VAT</p>
                 </div>
                 <div>
-                  <h4 class="price">19.250.000 <span class="text--small">vnđ</span></h4>
+                  <h4 class="price"><?= $value["price"]?> <span class="text--small">vnđ</span></h4>
                 </div>
               </div>
               <hr>
@@ -161,7 +162,7 @@
                   <h4 class="title">Trả góp lãi suất 0%</h4>
                 </div>
               </div>
-              <a class="btn btn-detail" href="">
+              <a class="btn btn-detail" href="./detail.php&id=<?php echo $value['id'] ?>">
                 XEM CHI TIẾT
               </a>
             </div>
@@ -172,163 +173,7 @@
         </div>
       </div>
     </div>
-    <div class="product-hot">
-      <h2 class="title">
-        SẢN PHẨM BÁN CHẠY
-      </h2>
-      <div class="list">
-        <div id="carousel-product" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="container">
-                <div class="row">
-                  <div class="col-lg-4">
-                    <div class="item">
-                      <img
-                        src="https://shop.vinfastauto.com/on/demandware.static/-/Sites-app_vinfast_vn-Library/default/dw0c093e39/landingpage/images/feliz.png"
-                        alt="">
-                      <div class="title">
-                        FELIZ - Đỏ
-                      </div>
-                      <div class="px-3 d-flex justify-content-between price">
-                        <div>Giá bán</div>
-                        <div class="text--highlight">14.900.000 <span class="text--small">vnđ</span></div>
-                      </div>
-                      <div class="px-3 d-flex justify-content-between sales">
-                        <div>Ưu đãi</div>
-                        <div>Trả góp lãi suất 0%</div>
-                      </div>
-                      <a class="btn btn-detail" href="">
-                        XEM CHI TIẾT
-                      </a>
-                    </div>
-                  </div>
-                  <div class="col-lg-4">
-                    <div class="item">
-                      <img
-                        src="https://shop.vinfastauto.com/on/demandware.static/-/Sites-app_vinfast_vn-Library/default/dw0c093e39/landingpage/images/feliz.png"
-                        alt="">
-                      <div class="title">
-                        FELIZ - Đỏ
-                      </div>
-                      <div class="px-3 d-flex justify-content-between price">
-                        <div>Giá bán</div>
-                        <div class="text--highlight">14.900.000 <span class="text--small">vnđ</span></div>
-                      </div>
-                      <div class="px-3 d-flex justify-content-between sales">
-                        <div>Ưu đãi</div>
-                        <div>Trả góp lãi suất 0%</div>
-                      </div>
-                      <a class="btn btn-detail" href="">
-                        XEM CHI TIẾT
-                      </a>
-                    </div>
-                  </div>
-                  <div class="col-lg-4">
-                    <div class="item">
-                      <img
-                        src="https://shop.vinfastauto.com/on/demandware.static/-/Sites-app_vinfast_vn-Library/default/dw0c093e39/landingpage/images/feliz.png"
-                        alt="">
-                      <div class="title">
-                        FELIZ - Đỏ
-                      </div>
-                      <div class="px-3 d-flex justify-content-between price">
-                        <div>Giá bán</div>
-                        <div class="text--highlight">14.900.000 <span class="text--small">vnđ</span></div>
-                      </div>
-                      <div class="px-3 d-flex justify-content-between sales">
-                        <div>Ưu đãi</div>
-                        <div>Trả góp lãi suất 0%</div>
-                      </div>
-                      <a class="btn btn-detail" href="">
-                        XEM CHI TIẾT
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="container">
-                <div class="row">
-                  <div class="col-lg-4">
-                    <div class="item">
-                      <img
-                        src="https://shop.vinfastauto.com/on/demandware.static/-/Sites-app_vinfast_vn-Library/default/dw0c093e39/landingpage/images/feliz.png"
-                        alt="">
-                      <div class="title">
-                        FELIZ - Đỏ
-                      </div>
-                      <div class="px-3 d-flex justify-content-between price">
-                        <div>Giá bán</div>
-                        <div class="text--highlight">14.900.000 <span class="text--small">vnđ</span></div>
-                      </div>
-                      <div class="px-3 d-flex justify-content-between sales">
-                        <div>Ưu đãi</div>
-                        <div>Trả góp lãi suất 0%</div>
-                      </div>
-                      <a class="btn btn-detail" href="">
-                        XEM CHI TIẾT
-                      </a>
-                    </div>
-                  </div>
-                  <div class="col-lg-4">
-                    <div class="item">
-                      <img
-                        src="https://shop.vinfastauto.com/on/demandware.static/-/Sites-app_vinfast_vn-Library/default/dw0c093e39/landingpage/images/feliz.png"
-                        alt="">
-                      <div class="title">
-                        FELIZ - Đỏ
-                      </div>
-                      <div class="px-3 d-flex justify-content-between price">
-                        <div>Giá bán</div>
-                        <div class="text--highlight">14.900.000 <span class="text--small">vnđ</span></div>
-                      </div>
-                      <div class="px-3 d-flex justify-content-between sales">
-                        <div>Ưu đãi</div>
-                        <div>Trả góp lãi suất 0%</div>
-                      </div>
-                      <a class="btn btn-detail" href="">
-                        XEM CHI TIẾT
-                      </a>
-                    </div>
-                  </div>
-                  <div class="col-lg-4">
-                    <div class="item">
-                      <img
-                        src="https://shop.vinfastauto.com/on/demandware.static/-/Sites-app_vinfast_vn-Library/default/dw0c093e39/landingpage/images/feliz.png"
-                        alt="">
-                      <div class="title">
-                        FELIZ - Đỏ
-                      </div>
-                      <div class="px-3 d-flex justify-content-between price">
-                        <div>Giá bán</div>
-                        <div class="text--highlight">14.900.000 <span class="text--small">vnđ</span></div>
-                      </div>
-                      <div class="px-3 d-flex justify-content-between sales">
-                        <div>Ưu đãi</div>
-                        <div>Trả góp lãi suất 0%</div>
-                      </div>
-                      <a class="btn btn-detail" href="">
-                        XEM CHI TIẾT
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carousel-product" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carousel-product" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </div>
-    </div>
+   
     <div class="policy-info container">
       <p class="title">CHÍNH SÁCH PIN LINH HOẠT - TIẾT KIỆM</p>
       <p class="summary">Mua pin, thuê pin linh hoạt, tiết kiệm. Khách hàng linh hoạt lựa chọn hình thức mua pin <br>

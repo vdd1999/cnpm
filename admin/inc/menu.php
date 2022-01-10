@@ -8,7 +8,7 @@ include '../lib/database.php';
 include '../helpers/format.php';
 
 spl_autoload_register(function ($class) {
-    include_once "../classes/" . $class . ".php";
+    include_once '../classes/' . $class . ".php";
 });
 
 $db = new Database();
@@ -96,6 +96,19 @@ $carcompany = new carcompany();
                             </ul>
                         </li>
                     <?php } ?>
+                    <!-- quản lí khách hàng -->
+                    <?php if (Session::get('level') == "0") { ?>
+                        <li class="nav-item">
+                            <a href="?q=customer" class="nav-link"><span class="pcoded-micon"><i class="feather icon-users"></i></span><span class="pcoded-mtext">Quản lý khách hàng</span></a>
+                        </li>
+                    <?php } ?>
+
+                    <?php if (Session::get('level') == "0") { ?>
+                        <li class="nav-item">
+                            <a href="?q=contract" class="nav-link"><span class="pcoded-micon"><i class="feather icon-users"></i></span><span class="pcoded-mtext">Quản lý hợp đồng</span></a>
+                        </li>
+                    <?php } ?>
+
 
                     <?php if (Session::get('level') < 2) { ?>
                         <li class="nav-item">
@@ -132,3 +145,4 @@ $carcompany = new carcompany();
         </div>
     </nav>
     <!-- [ navigation menu ] end -->
+</body>

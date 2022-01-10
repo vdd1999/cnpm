@@ -99,40 +99,6 @@
                         </div>
                         <!-- KET THUC HIEN THI DANH SACH THANH VIEN -->
 
-                        <!-- [Modal] -->
-                        <div class="modal fade" id="addmember" tabindex="-1" role="dialog" aria-labelledby="addmemberLabel" style="display: none;" aria-hidden="true">
-                            <div class="modal-dialog modal-lg" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="addmemberLabel">Thêm Nhân Viên</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">×</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form class="needs-validation" action="./?q=staff" method="POST" novalidate>
-                                            <div class="row">
-                                                <div class="col-lg-4 mt-3">
-                                                    <label for="fullname">Họ và Tên:</label>
-                                                    <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Nguyễn Văn A" required>
-                                                </div>
-                                                <div class="col-lg-4 mt-3">
-                                                    <label for="user">Tên người dùng:</label>
-                                                    <input type="text" class="form-control" name="user" id="user" placeholder="nguyenvana" required>
-                                                </div>
-                                                <div class="col-lg-4 mt-3">
-                                                    <label for="id_card">CMND/CCCD:</label>
-                                                    <input type="text" class="form-control" name="id_card" id="id_card" placeholder="352512xxx" required>
-                                                </div>
-                                                <div class="modal-footer mt-3">
-                                                    <button name="member" type="submit " class="btn btn-primary">Thêm nhân viên</button>
-                                                </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Kết thúc Modal -->
                     </div>
                 </div>
             </div>

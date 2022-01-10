@@ -55,10 +55,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
   }
 }
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-    $deleteProduct = $deleteProduct->deleteProduct($id);
-}
+// if (isset($_GET['id'])) {
+//     $id = $_GET['id'];
+//     $deleteProduct = $deleteProduct->deleteProduct($id);
+// }
 ?>
 
 <section class="pcoded-main-container">
@@ -164,7 +164,7 @@ if (isset($_GET['id'])) {
                                                                     <td> <?= $row['khoangcachtruc'] ?></td>
                                                                     <td> <?= $row['sotruc'] ?></td>
                                                                     <td> <?= $row['congthucbanhxe'] ?></td>
-                                                                    <td> <?= $row['loainguyenlieu'] ?></td>
+                                                                    <td> <?= $row['loainhienlieu'] ?></td>
                                                                     <td> <?= $row['nhanhieudongco'] ?></td>
                                                                     <td> <?= $row['loaidongco'] ?></td>
                                                                     <td> <?= $row['thetich'] ?></td>
