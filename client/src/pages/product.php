@@ -162,7 +162,7 @@
                   <h4 class="title">Trả góp lãi suất 0%</h4>
                 </div>
               </div>
-              <a class="btn btn-detail" href="./detail.php&id=<?php echo $value['id'] ?>">
+              <a class="btn btn-detail" href="./detail.php?id=<?php echo $value['id'] ?>">
                 XEM CHI TIẾT
               </a>
             </div>

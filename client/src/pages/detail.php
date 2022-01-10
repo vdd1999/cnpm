@@ -1,5 +1,17 @@
 <?php
 
+    if (!isset($_GET['id']) || $_GET['id'] == NULL) {
+        echo "<script>window.location='./product.php';</script>";
+    } else {
+        $id = $_GET['id'];
+        require_once("../../../config/conn.php");
+        $getDetail = getDetail($id);
+        if ($getDetail['code'] == 0) {
+            $kh = $getDetail['result'];
+            $data = $kh -> fetch_assoc();
+        }
+    }
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -247,10 +259,8 @@
 
     <div class="shopping">
         <div class="description">
-            <div class="header">VINFAST THEON</div>
-            <div class="title">CÔNG NGHỆ BỨT PHÁ,
-                <br>
-                TRẢI NGHIỆM ĐỈNH CAO
+            <div class="header">HONDA</div>
+            <div class="title"><?= $data["tensp"]?>
             </div>
             <div class="buy"><span>63.900.000 VNĐ</span><span>mua ngay</span></div>
             <ul>
@@ -277,13 +287,7 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="../../assets/images/detail/slide_2_1.png" alt="First slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="../../assets/images/detail/slide_2_2.png" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="../../assets/images/detail/slide_2_3.png" alt="Third slide">
+                        <?php echo "<img class='d-block w-100' src='../../../uploads/".$data['img']."' alt='Second slide'>"; ?>
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
