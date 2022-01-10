@@ -10,7 +10,6 @@
 	use PHPMailer\PHPMailer\Exception;
 
 	// Load Composer's autoloader
-	require '../vendor/autoload.php';
 	function open_db() {
 		$conn = new mysqli(servername, username, password, db);
 		
@@ -51,6 +50,20 @@
 	function getSanpham() {
 		$conn = open_db();
 		$sql = "SELECT * FROM chitietsanpham";
+		$stm = $conn->prepare($sql);
+		if (!$stm->execute()) {
+			return array('code'=>2,"msg"=>"SEVER CANNOT COMMAND");
+		}
+		$result = $stm->get_result();
+		if ($result->num_rows>0){
+			return array('code'=>0,"result"=>$result);
+		}
+		return array('code'=>1,"msg"=>"Không có sản phẩm");	
+	}
+	//Lấy danh sách 4 sản phẩm
+	function get4Sanpham() {
+		$conn = open_db();
+		$sql = "SELECT * FROM chitietsanpham limit 4";
 		$stm = $conn->prepare($sql);
 		if (!$stm->execute()) {
 			return array('code'=>2,"msg"=>"SEVER CANNOT COMMAND");
@@ -183,7 +196,7 @@
 	}
 
 	function updateStatus($id) {
-		$con = open_db();
+		$conn = open_db();
 		$sql = "UPDATE dangkilaithu SET trangthai=1 WHERE id=$id";
 		$stm = $conn->prepare($sql);
 		if (!$stm->execute()) {
@@ -195,5 +208,18 @@
 		}
 		return array('code'=>1,'msg'=>"Khong co thong tin");
 	}
+	// function deleteProduct($id) {
+	// 	$conn = open_db();
+	// 	$sql = "DELETE FROM `dangkilaithu` WHERE id = '$id'"
+	// 	$stm = $conn->prepare($sql);
+	// 	if (!$stm->execute()) {
+	// 		return array('code'=>2,'msg'=>"SEVER CANNOT COMMAND");
+	// 	}
+	// 	$result = $stm->get_result();
+	// 	if ($result->num_rows > 0) {
+	// 		return array('code'=>0,'result'=> $result);
+	// 	}
+	// 	return array('code'=>1,'msg'=>"Khong co thong tin");
+	// }
 
 ?>

@@ -32,7 +32,7 @@
     $ngoaithat = $_POST['ngoaithat'];
     $noithat = $_POST['noithat'];
     $conn = open_db();
-    $sql = 'INSERT INTO chitietsanpham(tensp,img,mota, noithat, ngoaithat, trongluongbanthan, taitrongchophep, trongluongtoanbo, kichthuocxe, kichthuoclongthung, loptruocsau,chieudaicoso,cautruoc,causau,songuoichophep ,khoangcachtruc ,vetbanhtruocsau,sotruc,congthucbanhxe,loainhienlieu,nhanhieudongco,congsuatlonnhat,loaidongco ,soluonglop,thetich) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
+    $sql = 'INSERT INTO chitietsanpham(tensp, img, mota, noithat, ngoaithat, trongluongbanthan, taitrongchophep, trongluongtoanbo, kichthuocxe, kichthuoclongthung, loptruocsau, chieudaicoso, cautruoc, causau, songuoichophep, khoangcachtruc, vetbanhtruocsau, sotruc, congthucbanhxe, loainhienlieu, nhanhieudongco, congsuatlonnhat, loaidongco, soluonglop, thetich) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
     $stm = $conn->prepare($sql);
 
     $stm->bind_param('sssssssssssssssssssssssss',$tensp,$img,$mota,$noithat,$ngoaithat,$trongluongbanthan,$taitrongchophep,$trongluongtoanbo,$kichthuocxe,$kichthuoclongthung,$loptruocsau,$chieudaicoso,$cautruoc,$causau,$songuoichophep ,$khoangcachtruc ,$vetbanhtruocsau,$sotruc,$congthucbanhxe,$loainhienlieu,$nhanhieudongco,$congsuatlonnhat,$loaidongco ,$soluonglop,$thetich);

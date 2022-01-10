@@ -1,6 +1,6 @@
 <?php include './inc/menu.php'; ?>
 <?php include './inc/header.php'; ?>
-
+<?php include '../config/conn.php'; ?>
 <?php
 if (isset($_GET["q"])) {
     switch ($_GET["q"]) {

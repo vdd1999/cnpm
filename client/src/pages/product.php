@@ -1,3 +1,13 @@
+<?php
+  
+  require_once '../../../config/conn.php'; 
+  $getSanPham = getNewProduct();
+  if ($getSanPham['code'] == 0) {
+    $result = $getSanPham['result'];
+  }
+  
+  
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -115,6 +125,9 @@
       </h2>
       <div class="container">
         <div class="row">
+          <?php
+              while ($value = $result->fetch_assoc()) {
+          ?>
           <div class="col-lg-6">
             <div class="item">
               <img
@@ -122,7 +135,7 @@
                 alt="">
               <div class="information">
                 <div>
-                  <h4 class="title">TEMPEST</h4>
+                  <h4 class="title"><?= $value["tensp"]?></h4>
                   <p>Giá đã bao gồm VAT</p>
                 </div>
                 <div>
@@ -143,34 +156,9 @@
               </a>
             </div>
           </div>
-          <div class="col-lg-6">
-            <div class="item">
-              <img
-                src="https://shop.vinfastauto.com/on/demandware.static/-/Sites-app_vinfast_vn-Library/default/dwffab4abd/landingpage/images/bike-tempest.jpg"
-                alt="">
-              <div class="information">
-                <div>
-                  <h4 class="title">TEMPEST</h4>
-                  <p>Giá đã bao gồm VAT</p>
-                </div>
-                <div>
-                  <h4 class="price">19.250.000 <span class="text--small">vnđ</span></h4>
-                </div>
-              </div>
-              <hr>
-              <div class="sales">
-                <div>
-                  <h4 class="title">Ưu đãi</h4>
-                </div>
-                <div>
-                  <h4 class="title">Trả góp lãi suất 0%</h4>
-                </div>
-              </div>
-              <a class="btn btn-detail" href="">
-                XEM CHI TIẾT
-              </a>
-            </div>
-          </div>
+          <?php
+              }
+          ?>
         </div>
       </div>
     </div>
